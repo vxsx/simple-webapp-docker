@@ -6,4 +6,8 @@ RUN pip install flask
 
 COPY app.py /opt/
 
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
+ENV FLASK_APP=/opt/app.py
+
+EXPOSE 8080
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
